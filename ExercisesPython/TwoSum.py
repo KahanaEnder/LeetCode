@@ -28,5 +28,22 @@ def TwoSum(nums,target):
                 print(output)
                 return output
     return output
-TwoSum(nums,target)
+#TwoSum(nums,target)
+
 #Respuesta con Hash
+
+def TwoSumHash(nums,target):
+    hashmap = {}
+    for i in range(len(nums)):
+        complemento = target - nums[i]
+
+        if (complemento in hashmap):
+            indice_anterior = hashmap[complemento]
+            resultado = [indice_anterior,i]
+            print(resultado)
+            return resultado
+        hashmap[nums[i]] = i
+    print([])
+    return []
+TwoSum(nums,target)
+
