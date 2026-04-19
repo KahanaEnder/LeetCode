@@ -40,7 +40,7 @@ def lengthofLongestSubstring(s: str) -> int:
     return longest
 
 texto = "abcabd"
-print(f"La longitud máxima es: {lengthofLongestSubstring(texto)}")
+#print(f"La longitud máxima es: {lengthofLongestSubstring(texto)}")
 #Mejor solucion
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
