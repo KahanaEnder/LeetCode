@@ -2,9 +2,9 @@ package Ejercicios;
 
 public class MedianTwoSortedArrays {
 	public static void main(String[] args) {
-		Solution solucion = new Solution();
-		int[] nums1 = {1,2,4,5,67,8,9};
-		int[] nums2 = {1,2,4,5,6,7,8,8,8,9};
+		Solution solucion = new Solution(); //Instanciamos la solucion
+		int[] nums1 = {1,2,4,5,7,8,9};
+		int[] nums2 = {1,2,4,5,6,7,8,8,8,9}; //Inicializar Arrays
 		System.out.println(solucion.findMedianSortedArrays(nums1,nums2));
 	}
 }
@@ -19,15 +19,15 @@ class Solution {
         int n = nums2.length;
         int low = 0, high = m;
 
-        while (low <= high) {
+        while (low <= high) { //Busqueda binaria
             int partitionX = (low + high) / 2;
-            int partitionY = (m + n + 1) / 2 - partitionX;
+            int partitionY = (m + n + 1) / 2 - partitionX; //Se ajusta automaticamente basado en la primera
 
             // Si partitionX es 0, no hay elementos a la izquierda en nums1. Usamos -Infinito
             int maxLeftX = (partitionX == 0) ? Integer.MIN_VALUE : nums1[partitionX - 1];
             // Si partitionX es m, no hay elementos a la derecha en nums1. Usamos +Infinito
             int minRightX = (partitionX == m) ? Integer.MAX_VALUE : nums1[partitionX];
-
+            //Repetimos para Y
             int maxLeftY = (partitionY == 0) ? Integer.MIN_VALUE : nums2[partitionY - 1];
             int minRightY = (partitionY == n) ? Integer.MAX_VALUE : nums2[partitionY];
 

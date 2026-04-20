@@ -60,9 +60,33 @@ class Solution:
         else:
             return merge[longitud2 // 2]
 
+class Solution2:
+    def findMedianSortedArrays(self,nums1, nums2): #Tercer Approach 
+        primerPuntero = segundoPuntero = 0 #Punteros
+
+        longitudArray1,longitudArray2 = len(nums1),len(nums2) #Longitudes
+
+        total = longitudArray2 + longitudArray1
+        previo = actual = 0
+        for bucle in range(total // 2 + 1): #O(m+n)
+            previo = actual
+            if primerPuntero < longitudArray1 and (segundoPuntero >= longitudArray2 or nums1[primerPuntero] <= nums2[segundoPuntero]): #Avanzamos hasta la mediana y guardamos el numero actual y el previo
+                actual = nums1[primerPuntero]
+                primerPuntero += 1
+            else:
+                actual = nums2[segundoPuntero]
+                segundoPuntero += 1
+        #Memoria O(1)
+        if total % 2 == 1:
+            return actual
+        return (previo + actual) / 2
+        
+
 if __name__ == "__main__":
-    nums1 = [1,2,2]
-    nums2 = [3,4]
+    nums1 = [3,6,9]
+    nums2 = [1,2,4,7,10]
     print(findMedianSortedArrays(nums1, nums2))
     s = Solution()
+    print(s.findMedianSortedArrays(nums1,nums2))
+    s = Solution2()
     print(s.findMedianSortedArrays(nums1,nums2))
