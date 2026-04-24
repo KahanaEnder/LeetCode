@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int AddDigits(int *number) {
-    if (*number == 0)
-    {
+    if (*number <= 0) /*Menor igual para negativos
+    {                 Aunque en la constraint va desde 0 <= num <= 2**31 - 1 */
         return 0;
     }
     
