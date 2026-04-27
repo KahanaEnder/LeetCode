@@ -1,3 +1,3 @@
 class Solution:
-    def furthestDistanceFromOrigin(self, moves: str) -> int
+    def furthestDistanceFromOrigin(self, moves: str) -> int:
         pass
