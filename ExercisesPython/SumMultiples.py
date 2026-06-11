@@ -29,3 +29,9 @@ def sumOfMultiples(n: int) -> int:
         + sum_divisible_by(105)
     )
 sumOfMultiples(7)
+'''
+Solucion Acotada con programacion funcional
+Igual a la que hice pero en vez de contador con "sum"
+'''
+def sumOfMultiples2(n: int) -> int:
+    return sum(x for x in range(1, n + 1) if x % 3 == 0 or x % 5 == 0 or x % 7 == 0)
