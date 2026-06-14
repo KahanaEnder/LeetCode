@@ -2,3 +2,4 @@
 ## Repaso de estructuras de datos.
 ### Manejo en alto y bajo nivel desde GC con Java, tipado dinamico con Python y manejo de memoria y recursos con C.
 ** Creación de Codespaces para este repositorio desde Canaima Windows 7 **
+#### Uso de Codespaces en canaima dualboot con lubuntu, editado desde terminal en GNU NANO 7.2
